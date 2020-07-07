@@ -19,7 +19,7 @@ export const Form = styled.View`
 export const FormInput = styled(Input)``;
 
 export const SubmitButton = styled(Button)`
-  margin-top: 12px;
+  margin-top: 10px;
 `;
 
 export const SignUpLink = styled.TouchableOpacity`

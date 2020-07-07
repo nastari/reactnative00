@@ -26,7 +26,7 @@ const SignIn = ({navigation}) => {
         />
 
         <FormInput
-          style={{marginTop: 12}}
+          style={{marginTop: 10}}
           icon="lock-outline"
           secureTextEntry
           placeholder="Digite sua senha"
