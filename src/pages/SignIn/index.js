@@ -17,7 +17,7 @@ const SignIn = ({navigation}) => {
 
       <Form>
         <FormInput
-          style={{marginTop: 25}}
+          marginTop={25}
           icon="mail-outline"
           keyboardType="email-address"
           autoCorrect={false}
@@ -26,7 +26,6 @@ const SignIn = ({navigation}) => {
         />
 
         <FormInput
-          style={{marginTop: 10}}
           icon="lock-outline"
           secureTextEntry
           placeholder="Digite sua senha"
