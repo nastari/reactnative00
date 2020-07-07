@@ -1,8 +1,13 @@
 import React from 'react';
 import {Image} from 'react-native';
-import Input from '../../components/Input';
-import Buttonn from '../../components/Button';
-import {Container, Tex} from './styles';
+import {
+  Container,
+  Form,
+  FormInput,
+  SubmitButton,
+  SignUpLink,
+  SignUpLinkText,
+} from './styles';
 import logo from '../../assets/images/logo2.png';
 
 const SignIn = ({navigation}) => {
@@ -10,31 +15,35 @@ const SignIn = ({navigation}) => {
     <Container>
       <Image source={logo} style={{height: 85, width: 320}} />
 
-      <Input
-        style={{marginTop: 25}}
-        icon="mail-outline"
-        placeholder="Digite seu email"
-      />
+      <Form>
+        <FormInput
+          style={{marginTop: 25}}
+          icon="mail-outline"
+          keyboardType="email-address"
+          autoCorrect={false}
+          autoCapitalize="none"
+          placeholder="Digite seu email"
+        />
 
-      <Input
-        style={{marginTop: 12}}
-        icon="lock-outline"
-        placeholder="Digite sua senha"
-      />
+        <FormInput
+          style={{marginTop: 12}}
+          icon="lock-outline"
+          secureTextEntry
+          placeholder="Digite sua senha"
+        />
+      </Form>
 
-      <Buttonn style={{marginTop: 12}}>ACESSAR</Buttonn>
+      <SubmitButton>ACESSAR</SubmitButton>
 
-      <Tex
-        style={{marginTop: 30}}
-        size={20}
-        weight={700}
-        onPress={() => navigation.navigate('Cadastrar')}>
-        Não tenho cadastro
-      </Tex>
+      <SignUpLink onPress={() => navigation.navigate('Cadastrar')}>
+        <SignUpLinkText size={20} weight={700}>
+          Não tenho cadastro
+        </SignUpLinkText>
+      </SignUpLink>
 
-      <Tex style={{marginTop: 30}} weight={300}>
-        Esqueci minha senha
-      </Tex>
+      <SignUpLink onPress={() => {}}>
+        <SignUpLinkText weight={300}>Esqueci minha senha</SignUpLinkText>
+      </SignUpLink>
     </Container>
   );
 };
