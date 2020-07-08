@@ -4,6 +4,7 @@ import Input from '../../components/Input';
 import Buttonn from '../../components/Button';
 import {
   Container,
+  Gradient,
   Form,
   FormInput,
   SubmitButton,
@@ -15,37 +16,40 @@ import logo from '../../assets/images/logo2.png';
 const SignUp = ({navigation}) => {
   return (
     <Container>
-      <Image source={logo} style={{height: 85, width: 320}} />
+      <Gradient>
+        <Image source={logo} style={{height: 85, width: 320}} />
 
-      <Form>
-        <FormInput
-          marginTop={25}
-          icon="person-outline"
-          autoCapitalize="none"
-          placeholder="Nome completo"
-        />
-        <FormInput
-          icon="mail-outline"
-          keyboardType="email-address"
-          autoCorrect={false}
-          autoCapitalize="none"
-          placeholder="Digite seu email"
-        />
+        <Form>
+          <FormInput
+            style={{marginTop: 25}}
+            icon="person-outline"
+            placeholder="Nome completo"
+          />
+          <FormInput
+            style={{marginTop: 10}}
+            icon="mail-outline"
+            keyboardType="email-address"
+            autoCorrect={false}
+            autoCapitalize="none"
+            placeholder="Digite seu email"
+          />
 
-        <FormInput
-          icon="lock-outline"
-          secureTextEntry
-          placeholder="Digite sua senha"
-        />
-      </Form>
+          <FormInput
+            style={{marginTop: 10}}
+            icon="lock-outline"
+            secureTextEntry
+            placeholder="Digite sua senha"
+          />
+        </Form>
 
-      <SubmitButton>CADASTRAR</SubmitButton>
+        <SubmitButton>CADASTRAR</SubmitButton>
 
-      <SignUpLink onPress={() => navigation.navigate('Login')}>
-        <SignUpLinkText size={20} weight={700}>
-          Já tenho cadastro
-        </SignUpLinkText>
-      </SignUpLink>
+        <SignUpLink onPress={() => navigation.navigate('Login')}>
+          <SignUpLinkText size={20} weight={700}>
+            Já tenho cadastro
+          </SignUpLinkText>
+        </SignUpLink>
+      </Gradient>
     </Container>
   );
 };
