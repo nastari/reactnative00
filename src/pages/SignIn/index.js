@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {Image} from 'react-native';
 import {
   Container,
@@ -12,6 +12,9 @@ import {
 import logo from '../../assets/images/logo2.png';
 
 const SignIn = ({navigation}) => {
+  const passwordRef = useRef();
+
+  function handleSubmit() {}
   return (
     <Container>
       <Gradient>
@@ -25,6 +28,8 @@ const SignIn = ({navigation}) => {
             autoCorrect={false}
             autoCapitalize="none"
             placeholder="Digite seu email"
+            returnKeyType="next"
+            onSubmitEditing={() => passwordRef.current.focus()}
           />
 
           <FormInput
@@ -32,6 +37,9 @@ const SignIn = ({navigation}) => {
             icon="lock-outline"
             secureTextEntry
             placeholder="Digite sua senha"
+            ref={passwordRef}
+            returnKeyType="send"
+            onSubmitEditing={() => handleSubmit()}
           />
         </Form>
 

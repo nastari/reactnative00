@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {Image} from 'react-native';
-import Input from '../../components/Input';
-import Buttonn from '../../components/Button';
+
 import {
   Container,
   Gradient,
@@ -14,6 +13,11 @@ import {
 import logo from '../../assets/images/logo2.png';
 
 const SignUp = ({navigation}) => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  function handleSubmit() {}
+
   return (
     <Container>
       <Gradient>
@@ -24,6 +28,8 @@ const SignUp = ({navigation}) => {
             style={{marginTop: 25}}
             icon="person-outline"
             placeholder="Nome completo"
+            returnKeyType="next"
+            onSubmitEditing={() => emailRef.current.focus()}
           />
           <FormInput
             style={{marginTop: 10}}
@@ -32,6 +38,10 @@ const SignUp = ({navigation}) => {
             autoCorrect={false}
             autoCapitalize="none"
             placeholder="Digite seu email"
+            returnKeyType="next"
+            ref={emailRef}
+            returnKeyType="next"
+            onSubmitEditing={() => passwordRef.current.focus()}
           />
 
           <FormInput
@@ -39,6 +49,9 @@ const SignUp = ({navigation}) => {
             icon="lock-outline"
             secureTextEntry
             placeholder="Digite sua senha"
+            ref={passwordRef}
+            returnKeyType="send"
+            onSubmitEditing={() => handleSubmit()}
           />
         </Form>
 
