@@ -33,7 +33,8 @@ const SignIn = ({navigation}) => {
           />
 
           <FormInput
-            style={{marginTop: 10}}
+            // style={{marginTop: 10}} // test , stranger behavior
+            // API 28 ANDROID
             icon="lock-outline"
             secureTextEntry
             placeholder="Digite sua senha"

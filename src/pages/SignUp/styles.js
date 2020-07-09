@@ -13,7 +13,7 @@ export const Container = styled.KeyboardAvoidingView.attrs({
 `;
 
 export const Gradient = styled(LinearGradient).attrs({
-  colors: ['white', 'white', 'rgb(195,195,242)'],
+  colors: ['rgb(102,190,223)', 'white', 'white', 'rgb(195,195,242)'],
 })`
   flex: 1;
   width: 100%;
